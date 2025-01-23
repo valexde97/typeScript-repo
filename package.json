@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "deploy": "gh-pages -d dist",
+    "deploy": "vite build && gh-pages -d dist",
+    "lazy":"git add . && git commit -m 'lazy' && git push",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
