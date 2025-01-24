@@ -1,8 +1,11 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+// import { useState } from "react";
+// import reactLogo from "./assets/react.svg";
+// import viteLogo from "/vite.svg";
 import "./App.css";
-import { Homework05 } from "./homeworks/homework05/Homework05";
+// import { Homework05 } from "./homeworks/homework05/Homework05";
+// import Lesson04 from "./lessons/lesson04/Lesson04";
+// import Practice from "./lessons/lesson04/Practice";
+// import Feedback from "./components/Feedback";
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -34,7 +37,10 @@ function App() {
 
   return (
     <>
-      <Homework05 />
+      {/* <Homework05 /> */}
+      {/* <Lesson04/> */}
+      {/* <Practice/> */}
+      {/* <Feedback/> */}
     </>
   );
 }
