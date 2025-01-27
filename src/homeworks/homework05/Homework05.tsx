@@ -1,9 +1,21 @@
 import Lesson05 from "../../lessons/lesson05/Lesson05"
-export function Homework05() {
+const fruits:string[] =["apple", "orange", "banana", "pineapple"]
+
+interface IHero {
+  id: number
+  name: string
+  age: number
+  isDark: boolean
+  weapons: string[]
+  image: string
+}
+
+export default function Homework05() {
   return (
     <>
       <h1>Fellowship of the ring🧙‍♂️🧙: </h1>
 
+      <div className="fellowshipContainer">
       <Lesson05
         id={1}
         name={"Gendalf"}
@@ -64,6 +76,7 @@ export function Homework05() {
           "https://gamesartist.co.uk/wp-content/uploads/2023/03/srdjan-orelj-gollum-00.jpg"
         }
       />
+      </div>
     </>
   );
 }

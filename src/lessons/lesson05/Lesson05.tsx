@@ -1,5 +1,5 @@
-import { Homework05 } from "../../homeworks/homework05/Homework05";
-import "./lesson05.css";
+import "./lesson05.css"
+import "./Lesson05"
 
 export default function Lesson05({ id, name, age, isDark, weapon, image }) {
   return (
@@ -16,7 +16,7 @@ export default function Lesson05({ id, name, age, isDark, weapon, image }) {
             {/* <p>Weapons {hero.weapons.map(weapon => ' | ' + weapon )}</p> */}
             <p>
               Weapons:
-              {weapon.length > 0 ? weapon.join(", ") : "None"}
+              {weapon?.length > 0 ? weapon.join(", ") : "None"}
             </p>
           </div>
   );

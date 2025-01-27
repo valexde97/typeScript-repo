@@ -1,21 +1,22 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-import App from './App.js'
-import Bikeshop from './components/Bike/BikeShop.js'
-import CarShop from './components/Car/CarShop.js'
+// import App from './App.jsx'
 import './index.css'
-import { StrictMode } from 'react'
+// import { StrictMode } from 'react'
+import Lesson03 from "./lessons/lesson03/Lesson03.jsx"
 import { createRoot } from 'react-dom/client'
-import Playground from './components/Playground/Playground.js'
-import RandomDog from './components/RandomDog/RandomDog.js'
+import Homework05 from "./homeworks/homework05/Homework05.js"
+import Lesson05 from "./lessons/lesson05/Lesson05.js"
+import Feedback from "./components/Feedback/Feedback.jsx"
+import Homework07 from './homeworks/homework07/Homework07.js'
+import App from "./App.js"
 // import Counter from './components/Counter/Counter.tsx'
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <RandomDog/>
-    <Playground/>
-    <CarShop/>
-    <Bikeshop/>
-    <App />
-    {/* <Counter /> */}
-  </StrictMode>,
-)
+createRoot(document.getElementById('root')).render(
+  // <StrictMode>
+  <>
+  <Lesson03/>
+   <Feedback/>
+   <Homework05/>
+   <Homework07/>
+   <App/>
+  </>,
+);
