@@ -37,7 +37,7 @@ function Lesson03() {
         <Button text="Don't push me!" func={() => someFunctionOne("Bro")} type="submit"/>
 
         
-      </ы>
+      </div>
     );
   }
 
