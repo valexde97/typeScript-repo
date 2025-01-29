@@ -1,8 +1,8 @@
 import { useState } from "react"
 // import lesson04 from "./lesson04.css"
 
-export default function Lesson04() {
-  // let count = 0
+export default function Lesson04():JSX.Element {
+  // let count:number = 0
 
   // const handlePlus = () => {
   //   count++
@@ -14,14 +14,14 @@ export default function Lesson04() {
   // let count = result[0]
   // let setCount = result[1]
 
-  let [count, setCount] = useState(0)
+  let [count, setCount] = useState<number>(0)
 
 
-  const handlePlus = () => {
+  const handlePlus = (): void => {
     setCount(prev => prev+1)
   }
 
-  const handleMinus = () => {
+  const handleMinus = (): void => {
     setCount(prev => prev-1)
   }
  

@@ -1,6 +1,13 @@
 import './userCard.css';
 
-function UserCard({name, age, hobby}) {
+interface IUserCardProps{
+  name:string;
+  age:number;
+  hobby:string;
+}
+
+function UserCard(props:IUserCardProps):JSX.Element {
+  const {name, age, hobby} = props;
   return (
     <div className="userCard">
       <h4>Name: {name}</h4>

@@ -1,0 +1,16 @@
+.heading{
+  font-size: 30px;
+  /* text-decoration: underline; */
+}
+
+.desc{
+  font-style: italic;
+}
+/* Такой селектр не удобно использовать в css */
+.text-orange{
+  color:orange
+}
+
+.textOrange{
+  color: orange;
+}

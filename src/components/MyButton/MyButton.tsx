@@ -1,11 +1,20 @@
-import './myButton.css'
+import styles from "../MyButton/myButton.module.css"
+import cn from 'classnames'
 // пример отдельного компонента кнопки
 // экспорт по умолчанию можно писать как в конце так и в начале объявления функции
 
+interface IMyButtonProps{
+  type?:"button" | "submit" | "reset"
+  children:string
+  onClick?:() => void
+  disabled?: boolean
+  variant?: "primary" | "danger";
+}
 
-
-function MyButton({type = "button", children, onClick}) {
-  return <button type={type} onClick={onClick} className="myButton">{children}</button>;
+function MyButton({type = "button", children, 
+  onClick}:IMyButtonProps) {
+  return <button type={type} onClick={onClick} 
+  className={cn(styles.myButton, styles.primary)}>{children} </button>;
 }
 
 export default MyButton;

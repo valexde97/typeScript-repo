@@ -1,14 +1,6 @@
 import Lesson05 from "../../lessons/lesson05/Lesson05"
-const fruits:string[] =["apple", "orange", "banana", "pineapple"]
 
-interface IHero {
-  id: number
-  name: string
-  age: number
-  isDark: boolean
-  weapons: string[]
-  image: string
-}
+
 
 export default function Homework05() {
   return (
