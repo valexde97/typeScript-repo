@@ -9,7 +9,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "homepage": "https://valexde97.github.io/typeScript-repo/"
   },
   "dependencies": {
     "classnames": "^2.5.1",
