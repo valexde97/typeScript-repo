@@ -1,6 +1,6 @@
 import reactImg from "../../assets/react.svg";
 
-function Lesson01() {
+function Lesson01():JSX.Element {
   return (
     <>
       <img src={reactImg} width={100} alt="react-Img" />

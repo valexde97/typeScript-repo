@@ -1,63 +1,60 @@
 import { useEffect, useState } from "react";
-import CatInfo from "../../components/CatInfo/CatInfo";
+import Loader from "../loader/Loader";
+import MyButton from "../MyButton/MyButton";
+import './fetchFox.css';
 
-interface ICatImageData {
-    url: string;
-  }
-  interface ICatFactData {
-    fact: string;
-  }
-  export default function Lesson10(): JSX.Element {
-    const [catImg, setCatImage] = useState<string>("");
-    const [catText, setCatText] = useState<string>("");
-    const [isLoading, setIsLoading] = useState<boolean>(true);
-    const [facts, setFacts] = useState<string[]>([]); // Массив для хранения всех фактов
-    const fetchCatImage = async (): Promise<void> => {
-      setIsLoading(true);
-      const res = await fetch(
-        "https://api.thecatapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=false&order=RANDOM&page=0&limit=1"
-      );
-      const data: ICatImageData[] = await res.json();
-      setCatImage(data[0].url);
-      setIsLoading(false);
-    };
-    const fetchTextCat = async (): Promise<void> => {
-      const res = await fetch("https://catfact.ninja/fact");
-      const data: ICatFactData = await res.json();
-      setCatText(data.fact);
-    };
-    const handleGetCat = (): void => {
-        fetchTextCat(); // Загружаем новый факт
-        setFacts((prevFacts) => [...prevFacts, catText]); // Добавляем новый факт в массив
-      };
-    useEffect(() => {
-      fetchCatImage();
-      fetchTextCat();
-    }, []);
-    return (
-      <div className="cat-wrapper">
-        {isLoading ? (
-          <p>Loading...</p>
-        ) : (
-          <img src={catImg} alt="A random cat" />
-        )}
-        <CatInfo info={catText} />
-        <button onClick={fetchTextCat}>Get more info!</button>
-      </div>
-    );
+// * типизация данных с сервера
+interface IFoxData {
+  image: string;
+  link: string;
+}
+
+export default function FetchFox(): JSX.Element {
+  // * переменная состояния для хранения полученной с сервера ссылки на картинку
+  const [foxImg, setFoxImg] = useState<string>('');
+
+  // * переменная переключатель loader индикатора загрузки
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  // * асинхронная функция для получения данных с сервера
+  const fetchFox = async (): Promise<void> => {
+    const res = await fetch('https://randomfox.ca/floof/');
+    const data: IFoxData = await res.json();
+    setFoxImg(data.image);
+    // ! выключаем loader
+    setIsLoading(false)
+  };
+
+  // * функция обработчик, которая чуть замедляет вызов fetchFox для красивого отображения loader
+  const handleGetFox = ():void => {
+    // ! включаем loader
+    setIsLoading(true)
+    // * функция fetchFox вызовется через 1.5 секунд
+    setTimeout(()=> {
+      fetchFox();
+    }, 500)
   }
 
 
+  // * оборачиваем fetch запрос в useEffect, чтобы он вызывался только один раз в начале жизненного цикла
+  useEffect(() => {
+    // вызываем функцию чуть замедляющую вызов
+    handleGetFox();
+  }, []);
 
-
-
-
-
-
-
-
-
-
-
-
-
+  return (
+    <div>
+      {/* отображение данных через тернарный оператор */}
+      {/* если isLoading true - показываем loader */}
+      {/* если false - показываем картинку лисы и кнопку */}
+      {isLoading ? <Loader /> : (
+        <>
+          <div className="fox-wrapper">
+            <img src={foxImg} alt="" />
+          </div>
+          <MyButton func={handleGetFox} text="get new fox" />
+        </>
+      )}
+    </div>
+  );
+}

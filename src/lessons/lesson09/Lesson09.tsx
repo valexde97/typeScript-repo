@@ -1,17 +1,27 @@
-import MyButton from "../../components/MyButton/MyButton"
-import styles from "./lesson09.module.css"
+
+// импорт стилей в переменной из файла module.css
+import styles from './lesson09.module.css';
+import MyButton from '../../components/MyButton/MyButton';
 
 export default function Lesson09() {
+  console.log(styles);
   return (
     <div>
-      {/* Если css написан давно в кебаб кейс, мы можем обратиться к нему так */}
-      {/* <h2 className={styles["text-orange"]}>Lesson09. CSS Modules🎨</h2> */}
-      {/* <h2 className={styles.textOrange + " " + styles.heading}>Lesson09. CSS Modules🎨</h2> */}
-     
-      <h2 className={`${styles.textOrange} ${styles.heading}`}>Lesson09. CSS Modules🎨</h2>
-      <p className={styles.des}>CSS modules - Это способ, как мы можем 
-        изолированно работать со стилями CSS</p>
-        <MyButton children={""}/>
+      {/* если css написан в стиле kebab case через дефис мы все равно можем обратиться к ключу но делать это неудобно */}
+      {/* <h2 className={styles['text-orange'] }>Lesson 09. Css modules 🎨</h2> */}
+      {/* <h2 className={styles.textOrange + ' ' + styles.heading}>Lesson 09. Css modules 🎨</h2> */}
+      <h2 className={`${styles.textOrange} ${styles.heading}`}>Lesson 09. Css modules 🎨</h2>
+      <p className={styles.desc}>Css modules - это способ, как мы можем изолированно работать сос стилями CSS</p>
+      <MyButton variant="danger" text="disabled" disabled={true}/>
+      <MyButton variant="danger" text="danger"/>
+      <MyButton variant="primary" text="primary"/>
+      <p>Задачу добавления нескольких классов в css module можно решить несколькими способами:</p>
+      <ul className={styles.list}>
+        <li>Конкатенация</li>
+        <li>Шаблонная строка</li>
+        <li>Библиотека classnames</li>
+      </ul>
     </div>
-  )
+  );
 }
+

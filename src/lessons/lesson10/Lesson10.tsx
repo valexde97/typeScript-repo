@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Loader from "../../components/loader/Loader";
 import CatInfo from "../../components/CatInfo/CatInfo";
+import styles from "../lesson10/lesson10.module.css"
+import MyButton from "../../components/MyButton/MyButton";
 interface ICatImageData {
   url: string;
 }
@@ -48,12 +50,12 @@ export default function Lesson10(): JSX.Element {
     fetchTextCat();
   };
   return (
-    <div className="cat-wrapper">
+    <div className={styles.cat_wrapper}>
       {isLoading ? (
         <Loader />
       ) : (
         <>
-          <div className="catWrapper">
+          <div className={styles.catWrapper}>
             <img src={catImg} alt="A random cat" />
           </div>
         </>

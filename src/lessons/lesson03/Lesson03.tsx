@@ -1,10 +1,10 @@
 
 import Button from "../../homeworks/homework03/Button";
-import tip from "./Img/tip.jpg"
+import tip from "../lesson03/Img/tip.jpg"
 import  "./lesson03.css"
 
-function Lesson03() {
-  function profilePicture(){
+function Lesson03(): JSX.Element {
+  function profilePicture():string{
     return(
       "https://img-webcalypt.ru/uploads/admin/images/meme-templates/b4kHFk8Pz3I7OfhMUY1RtuGFvwxOFTMt.jpg"
     )
@@ -12,7 +12,7 @@ function Lesson03() {
 
   let count = 0;
 
-  function someFunctionOne(name) {
+  function someFunctionOne(name:string):void {
     
 
     if (count < 3) {
