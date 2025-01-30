@@ -5,9 +5,9 @@ export default function Layout(){
   return(
     <>
     <header className={styles.header}>
-    <NavLink className={({isActive}) =>(isActive ? styles.linkActive : " ")}  to={"/"}>home</NavLink>
-    <NavLink className={({isActive}) =>(isActive ? styles.linkActive : " ")}  to={"lesson08"}>lesson08</NavLink>
-    <NavLink className={({isActive}) =>(isActive ? styles.linkActive : " ")}  to={"lesson10"}>lesson10</NavLink>
+    <NavLink className={({isActive}) =>(isActive ? styles.linkActive : " ")}  to={"/"}>Home</NavLink>
+    <NavLink className={({isActive}) =>(isActive ? styles.linkActive : " ")}  to={"fetch-fox"}>Fetch Fox</NavLink>
+    <NavLink className={({isActive}) =>(isActive ? styles.linkActive : " ")}  to={"lesson10"}>Lesson 10</NavLink>
 
     </header>
     <main className={styles.main}>
