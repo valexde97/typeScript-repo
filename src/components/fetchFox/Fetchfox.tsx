@@ -43,18 +43,16 @@ export default function FetchFox(): JSX.Element {
   }, []);
 
   return (
-    <div>
-      {/* отображение данных через тернарный оператор */}
-      {/* если isLoading true - показываем loader */}
-      {/* если false - показываем картинку лисы и кнопку */}
-      {isLoading ? <Loader /> : (
-        <>
-          <div className="fox-wrapper">
-            <img src={foxImg} alt="" />
-          </div>
-          <MyButton func={handleGetFox} text="get new fox" />
-        </>
+    <div className="container">
+      {isLoading && (
+        <div className="loader-overlay">
+          <Loader />
+        </div>
       )}
+      <div className="fox-wrapper">
+        <img src={foxImg} alt="Fox" />
+      </div>
+      <MyButton func={handleGetFox} text="get new fox" />
     </div>
   );
 }
