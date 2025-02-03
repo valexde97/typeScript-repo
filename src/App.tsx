@@ -20,6 +20,7 @@ import FormGender from "./homeworks/homework12/FormGender";
 import Lesson13 from "./lessons/lesson13/Lesson13";
 import Homework13 from "./homeworks/homework13/Homework13";
 import Homework13Form2 from "./homeworks/homework13/Homework13Form2";
+import FormHW from "./homeworks/homework13/FormHW";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route path="registerForm" element={<Homework13/>} />
             <Route path="formGender" element={<FormGender/>} />
             <Route path="loginForm" element={< Homework13Form2/>} />
+            <Route path="switchForm" element={< FormHW/>} />
             <Route path="lesson01" element={<Lesson01 />} />
             <Route path="lesson02" element={<Lesson02 />} />
             <Route path="lesson03" element={<Lesson03 />} />
