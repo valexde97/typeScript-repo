@@ -14,6 +14,9 @@ import Lesson03 from "./lessons/lesson03/Lesson03";
 import Lesson04 from "./lessons/lesson04/Lesson04";
 import Homework05 from "./homeworks/homework05/Homework05";
 import styles from "./App.module.css";
+import Lesson11 from "./lessons/lesson11/Lesson11";
+import Lesson12 from "./lessons/lesson12/Lesson12";
+import FormGender from "./homeworks/homework12/FormGender";
 
 function App() {
   return (
@@ -33,7 +36,10 @@ function App() {
             <Route path="lesson08" element={<Lesson08 />} />
             <Route path="lesson09" element={<Lesson09 />} />
             <Route path="lesson10" element={<Lesson10 />} />
-            <Route path="lesson11" element={<ErrorPage />} />
+            <Route path="lesson11" element={<Lesson11 />} />
+            <Route path="lesson12" element={<Lesson12 />} />
+            <Route path="formGender" element={<FormGender/>} />
+
             <Route path="*" element={<ErrorPage />} />
           </Route>
         </Routes>
