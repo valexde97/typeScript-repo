@@ -1,23 +1,26 @@
 import { useState } from "react";
 import MyButton from "../../components/MyButton/MyButton";
-import styles from "./formGender.modeule.css";
+import styles from "./formGender.module.css";
 import { useFormik } from "formik";
 
 interface IFormValues {
   name: string;
 }
-interface IFormData{
+
+interface IFormData {
+  count: number;
+  probability: number;
   gender: string;
-  isMale: boolean;
+  name: string;
 }
 
 export default function Lesson12(): JSX.Element {
-  const [gender, setGender] = useState<string>("");
+  const [genderData, setGenderData] = useState<IFormData | null>(null);
 
   const fetchGender = async (name: string) => {
     const response = await fetch(`https://api.genderize.io/?name=${name}`);
-    const data = await response.json();
-    setGender(data.gender);
+    const data: IFormData = await response.json();
+    setGenderData(data);
   };
 
   const formik = useFormik({
@@ -25,15 +28,14 @@ export default function Lesson12(): JSX.Element {
       name: "",
     } as IFormValues,
     onSubmit: (values: IFormValues) => {
-      fetchGender(values.name)
-
+      fetchGender(values.name);
     },
   });
 
   return (
     <>
-      <h2>Lesson 12. Formik</h2>
-      <form onSubmit={formik.handleSubmit}>
+      <h2>Gender Form♂️🧔🏻‍♀️♀️</h2>
+      <form className={styles.form} onSubmit={formik.handleSubmit}>
         <input
           onChange={formik.handleChange}
           value={formik.values.name}
@@ -43,7 +45,13 @@ export default function Lesson12(): JSX.Element {
         />
         <MyButton type="submit" text="send data" />
       </form>
-     <h2>{gender==="male" ? "🧔🏻‍♂️": "👱🏻‍♀️"}</h2>
+      {genderData && (
+        <p>
+          {genderData.name} is on {" "}
+          {Math.round(genderData.probability * 100)}%
+          {genderData.gender === "male" ? "🧔🏻‍♂️" : "👩🏼‍🦰"}{" "}
+        </p>
+      )}
     </>
   );
 }

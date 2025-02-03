@@ -8,35 +8,43 @@
   width: 100%;
   height: 80px;
   padding: 0px 50px;
-  background-color: rgb(206, 103, 0);
+  background-color: rgb(4, 123, 156);
   margin-bottom: 5px;
 }
 
 .header a {
-  color: white;
+  color: var(--text-color);
+  font-size: 18px;
+  padding: 10px;
+  transition: color 0.3s;
 }
 
 .header a:hover {
-  text-decoration: underline;
+  color: #ffdb0e;
 }
 
 .main {
+  color: rgb(205, 246, 174);
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0px 5px;
   width: 100%;
   flex: 1;
+  background-color: rgb(19, 171, 221);
 }
 
 .footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   height: 50px;
-  background-color: rgb(130, 130, 130);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--footer-bg);
+  color: var(--text-color);
+  font-size: 16px;
 }
+
 
 .linkActive {
   text-decoration: underline;
