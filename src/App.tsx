@@ -21,19 +21,29 @@ import Lesson13 from "./lessons/lesson13/Lesson13";
 import Homework13 from "./homeworks/homework13/Homework13";
 import Homework13Form2 from "./homeworks/homework13/Homework13Form2";
 import FormHW from "./homeworks/homework13/FormHW";
+import Lesson14 from "./lessons/lesson14/Lesson14";
+import ProductPage from "./components/productPage/ProductPage";
+import { CartProvider } from "./context/CartContext";
+import Cart from "./components/Cart/Cart";
+import Products from "./components/products/Products";
 
 function App() {
   return (
     <div className={styles.root}>
+      <CartProvider>
       <HashRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route path="/" element={<HomePage />} />
             <Route path="fetch-fox" element={<FetchFox />} />
-            <Route path="registerForm" element={<Homework13/>} />
-            <Route path="formGender" element={<FormGender/>} />
-            <Route path="loginForm" element={< Homework13Form2/>} />
-            <Route path="switchForm" element={< FormHW/>} />
+            <Route path="registerForm" element={<Homework13 />} />
+            <Route path="formGender" element={<FormGender />} />
+            <Route path="loginForm" element={<Homework13Form2 />} />
+            <Route path="switchForm" element={<FormHW />} />
+            <Route path="Cart" element={<Cart />} />
+            <Route path="Products" element={<Products />} />
+            <Route path="Products/:id" element={<ProductPage />} />
+
             <Route path="lesson01" element={<Lesson01 />} />
             <Route path="lesson02" element={<Lesson02 />} />
             <Route path="lesson03" element={<Lesson03 />} />
@@ -46,13 +56,15 @@ function App() {
             <Route path="lesson10" element={<Lesson10 />} />
             <Route path="lesson11" element={<Lesson11 />} />
             <Route path="lesson12" element={<Lesson12 />} />
-            <Route path="lesson13" element={<Lesson13/>} />
-           
+            <Route path="lesson13" element={<Lesson13 />} />
+            <Route path="lesson14" element={<Lesson14 />} />
+            <Route path="lesson14/:id" element={<ProductPage />} />
 
             <Route path="*" element={<ErrorPage />} />
           </Route>
         </Routes>
       </HashRouter>
+      </CartProvider>
     </div>
   );
 }

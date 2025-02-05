@@ -54,7 +54,7 @@ export default function Homework13(): JSX.Element {
 
   return (
     <div>
-      <h2>Register Form</h2>
+      <h2>Registration Form📚</h2>
       <form onSubmit={formik.handleSubmit} className={styles.robotForm}>
         <input value={formik.values.login} onChange={formik.handleChange} placeholder="Login" type="text" name="login" />
         <input value={formik.values.password} onChange={formik.handleChange} placeholder="Password" type="password" name="password" />
