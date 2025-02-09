@@ -1,0 +1,64 @@
+.gridContainer {
+  display: grid;
+  gap: 45px; /* Увеличенный отступ между кнопками */
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); 
+  grid-auto-rows: 140px;
+  margin: 30px auto;
+  width: 800px;
+  padding: 10px;
+}
+
+.gridContainer a {
+  text-decoration: none;
+}
+
+.gridContainer div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  color: white;
+  background: linear-gradient(135deg, #27215c, #19a3ff);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  padding: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.gridContainer div:hover {
+  background: linear-gradient(135deg, #3529be, #0a5372);
+  transform: scale(1.05);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.gridContainer div:active {
+  transform: scale(0.95);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Анимация светового эффекта при наведении */
+.gridContainer div::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
+  transition: all 0.4s ease-in-out;
+  opacity: 0;
+}
+
+.gridContainer div:hover::before {
+  top: -20%;
+  left: -20%;
+  opacity: 1;
+}

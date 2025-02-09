@@ -10,7 +10,7 @@
   --hover-color: #ffdb0e; /* Желтый акцент */
 }
 
-/* Базовые стили */
+
 body {
   font-family: Arial, sans-serif;
   background-color: var(--background-color);
@@ -52,7 +52,6 @@ body {
   margin-left: auto;
 }
 
-/* Основной контент */
 .main {
   color: var(--text-color);
   display: flex;

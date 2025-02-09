@@ -30,7 +30,13 @@ import Lesson16 from "./lessons/lesson16/Lesson16";
 import Lesson17 from "./lessons/lesson17/Lesson17";
 import StoreProductInfo from "./lessons/lesson17/StoreProductInfo";
 import Homeworks from "./homeworks/Homeworks";
+import Homework01 from "./homeworks/homework01/Homework01";
+import Homework02 from "./homeworks/homework02/Homework02";
 import Lessons from "./lessons/Lessons";
+import Feedback from "./components/Feedback/Feedback"
+import Button from "./homeworks/homework03/Button";
+import MyButton from "./components/MyButton/MyButton";
+import Homework07 from "./homeworks/homework07/Homework07";
 
 function App() {
   return (
@@ -49,7 +55,7 @@ function App() {
             <Route path="Products" element={<Products />} />
             <Route path="Products/:id" element={<ProductPage />} />
             <Route path="homeworks" element={<Homeworks />} />
-            <Route path="homeworks" element={<Lessons />} />
+            <Route path="lessons" element={<Lessons />} />
 
             <Route path="lesson01" element={<Lesson01 />} />
             <Route path="lesson02" element={<Lesson02 />} />
@@ -69,6 +75,24 @@ function App() {
             <Route path="lesson16" element={<Lesson16 />} />
             <Route path="lesson17" element={<Lesson17 />} />
             <Route path="lesson17/:id" element={<StoreProductInfo />} />
+            
+            <Route path="homework01" element={<Homework01 />} />
+            <Route path="homework02" element={<Homework02 />} />
+            <Route path="homework03" element={<MyButton />} />
+            <Route path="homework04" element={<Feedback />} />
+            <Route path="homework05" element={<Homework05 />} />
+            <Route path="homework06" element={<FetchFox />} />
+            <Route path="homework07" element={<Homework07 />} />
+            <Route path="homework08" element={<Homework08 />} />
+            <Route path="homework09" element={<ErrorPage />} />
+            <Route path="homework10" element={<Lesson10 />} />
+            <Route path="homework11" element={<ErrorPage />} />
+            <Route path="homework12" element={<FormGender />} />
+            <Route path="homework13" element={< FormHW/>} />
+            <Route path="homework14" element={<Products />} />
+            <Route path="homework15" element={<ErrorPage />} />
+            <Route path="homework16" element={< Lesson17/>} />
+
 
             <Route path="*" element={<ErrorPage />} />
           </Route>

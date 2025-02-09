@@ -1,0 +1,36 @@
+.profileCard {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 400px;
+  margin: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.cardContent {
+  flex-grow: 1;
+}
+
+.name {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.occupation, .hobbies {
+  font-size: 1rem;
+  color: #555;
+}
+
+.occupation strong, .hobbies strong {
+  color: #000;
+}
