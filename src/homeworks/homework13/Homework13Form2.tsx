@@ -10,12 +10,12 @@ interface IFormValues {
 
 const schema = Yup.object().shape({
   email: Yup.string()
-    .required("Email is required")
-    .email("Incorrect email format"),
+    .required("-Email is required- ")
+    .email("-Incorrect email format- "),
 
   password: Yup.string()
-    .required("Password is required")
-    .min(8, "Must be more than 8 symbols"),
+    .required("-Password is required- ")
+    .min(8, "-Must be more than 8 symbols- "),
 });
 
 export default function Homework13Form2(): JSX.Element {

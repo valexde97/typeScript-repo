@@ -14,7 +14,7 @@ interface ICartContextType {
   addToCart: (product: ICartItem) => void;
   removeFromCart: (id: number) => void;
   clearCart: () => void;
-  totalPrice: number; // Добавляем totalPrice
+  totalPrice: number; 
 }
 
 // 1. Создаем контекст с начальным значением undefined
@@ -44,9 +44,10 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     setCart([]);
   };
 
-  // Вычисляем общую сумму
   const totalPrice = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
+
+  
   return (
     <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart, totalPrice }}>
       {children}

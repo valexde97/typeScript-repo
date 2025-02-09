@@ -12,27 +12,27 @@ interface IFormValues {
 
 const schema = Yup.object().shape({
   login: Yup.string()
-    .required("Login is required")
-    .matches(/^[a-zA-Z0-9_]+$/, "Only letters, numbers, and underscores allowed")
-    .min(3, "Must be more than 3 symbols")
-    .max(20, "Must be less than 20 symbols"),
+    .required("-Login is required- ")
+    .matches(/^[a-zA-Z0-9_]+$/, "-Only letters, numbers, and underscores allowed-" )
+    .min(3, "-Must be more than 3 symbols- ")
+    .max(20, "-Must be less than 20 symbols- "),
 
   email: Yup.string()
-    .required("Email is required")
-    .email("Incorrect email format"),
+    .required("-Email is required- ")
+    .email("-Incorrect email format- "),
 
   password: Yup.string()
-    .required("Password is required")
-    .min(8, "Must be more than 8 symbols")
-    .max(32, "Must be less than 32 symbols")
-    .matches(/[A-Z]/, "At least one uppercase letter (A-Z)")
-    .matches(/[a-z]/, "At least one lowercase letter (a-z)")
-    .matches(/\d/, "At least one number (0-9)")
-    .matches(/[@$!%*?&]/, "At least one special character (@$!%*?&)"),
+    .required("-Password is required- ")
+    .min(8, "-Must be more than 8 symbols- ")
+    .max(32, "-Must be less than 32 symbols- - ")
+    .matches(/[A-Z]/, "-At least one uppercase letter (A-Z)- ")
+    .matches(/[a-z]/, "-At least one lowercase letter (a-z)- ")
+    .matches(/\d/, "-At least one number (0-9)- ")
+    .matches(/[@$!%*?&]/, "-At least one special character (@$!%*?&)- "),
 
   confirmPassword: Yup.string()
-    .oneOf([Yup.ref("password")], "Passwords must match")
-    .required("Password must be confirmed")
+    .oneOf([Yup.ref("password")], "-Passwords must match- ")
+    .required("-Password must be confirmed- ")
 });
 
 export default function Homework13(): JSX.Element {

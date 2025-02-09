@@ -1,4 +1,4 @@
-import styles from "../../lessons/lesson13/lesson13.module.css";
+import styles from "./products.module.css"
 import MyButton from "../../components/MyButton/MyButton";
 import * as Yup from "yup";
 import { useFormik } from "formik";
@@ -8,7 +8,7 @@ import ProductCard from "../productCard/ProductCard";
 import Loader from "../loader/Loader";
 import { Link } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
-import Cart from "../Cart/Cart";
+
 
 
 
@@ -20,10 +20,10 @@ export default function Products(): JSX.Element {
 
   const schema = Yup.object().shape({
     quantity: Yup.number()
-      .typeError("Please enter a number")
-      .min(1, "Minimum value is 1")
-      .max(20, "Maximum value is 20")
-      .required("Quantity is required"),
+      .typeError("-Please enter a number- ")
+      .min(1, "-Minimum value is 1- ")
+      .max(20, "-Maximum value is 20- ")
+      .required("-Quantity is required- "),
   });
 
   const formik = useFormik({
@@ -53,10 +53,10 @@ export default function Products(): JSX.Element {
   
   return (
     <>
-    <Cart/>
-    <div className={styles.shopContainer}>
+    {/* <Cart/> */}
+    <div className={styles.productsContainer}>
       <h2>Product List</h2>
-      <form onSubmit={formik.handleSubmit} className={styles.productForm}>
+      <form onSubmit={formik.handleSubmit} className={styles.productCard}>
         <input
           type="number"
           name="quantity"
@@ -80,8 +80,7 @@ export default function Products(): JSX.Element {
               image={product.image}
               price={product.price}
             />
-            <Link key={product.id} to={String(product.id)}>to product</Link>
-            <button onClick={() => addToCart({ id: product.id, title: product.title, price: product.price, quantity: 1 })}>add to cart</button>
+ 
           </div>
         ))}
       </div>

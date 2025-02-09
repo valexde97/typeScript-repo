@@ -2,3 +2,7 @@
   width: 100%;
   padding: 6px;
 }
+
+.errorMessage{
+  color: red
+}

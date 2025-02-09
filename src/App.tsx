@@ -26,6 +26,11 @@ import ProductPage from "./components/productPage/ProductPage";
 import { CartProvider } from "./context/CartContext";
 import Cart from "./components/Cart/Cart";
 import Products from "./components/products/Products";
+import Lesson16 from "./lessons/lesson16/Lesson16";
+import Lesson17 from "./lessons/lesson17/Lesson17";
+import StoreProductInfo from "./lessons/lesson17/StoreProductInfo";
+import Homeworks from "./homeworks/Homeworks";
+import Lessons from "./lessons/Lessons";
 
 function App() {
   return (
@@ -43,6 +48,8 @@ function App() {
             <Route path="Cart" element={<Cart />} />
             <Route path="Products" element={<Products />} />
             <Route path="Products/:id" element={<ProductPage />} />
+            <Route path="homeworks" element={<Homeworks />} />
+            <Route path="homeworks" element={<Lessons />} />
 
             <Route path="lesson01" element={<Lesson01 />} />
             <Route path="lesson02" element={<Lesson02 />} />
@@ -59,6 +66,9 @@ function App() {
             <Route path="lesson13" element={<Lesson13 />} />
             <Route path="lesson14" element={<Lesson14 />} />
             <Route path="lesson14/:id" element={<ProductPage />} />
+            <Route path="lesson16" element={<Lesson16 />} />
+            <Route path="lesson17" element={<Lesson17 />} />
+            <Route path="lesson17/:id" element={<StoreProductInfo />} />
 
             <Route path="*" element={<ErrorPage />} />
           </Route>

@@ -7,14 +7,12 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <NavLink className={({ isActive }) => (isActive ? styles.linkActive : "")} to={"/"}>Home</NavLink>
-      <NavLink className={({ isActive }) => (isActive ? styles.linkActive : "")} to={"fetch-fox"}>Fetch Fox</NavLink>
-      <NavLink className={({ isActive }) => (isActive ? styles.linkActive : "")} to={"lesson10"}>Lesson 10</NavLink>
-      {/* <NavLink className={({ isActive }) => (isActive ? styles.linkActive : "")} to={"loginForm"}>Login Form</NavLink> */}
-      {/* <NavLink className={({ isActive }) => (isActive ? styles.linkActive : "")} to={"registerForm"}>Register Form</NavLink> */}
+      <NavLink className={({ isActive }) => (isActive ? styles.linkActive : "")} to={"lesson10"}>Cat App</NavLink>
       <NavLink className={({ isActive }) => (isActive ? styles.linkActive : "")} to={"formGender"}>Gender Form</NavLink>
       <NavLink className={({ isActive }) => (isActive ? styles.linkActive : "")} to={"switchForm"}>Switch Form</NavLink>
       <NavLink className={({ isActive }) => (isActive ? styles.linkActive : "")} to={"Cart"}>Cart</NavLink>
       <NavLink className={({ isActive }) => (isActive ? styles.linkActive : "")} to={"Products"}>Products</NavLink>
+      <NavLink className={({ isActive }) => (isActive ? styles.linkActive : "")} to={"lesson17"}>New Shop</NavLink>
     <span className={styles.totalPrice}>Total: €{totalPrice.toFixed(2)}</span>
     </header>
   );
