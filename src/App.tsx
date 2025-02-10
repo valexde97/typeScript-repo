@@ -71,6 +71,7 @@ function App() {
             <Route path="lesson12" element={<Lesson12 />} />
             <Route path="lesson13" element={<Lesson13 />} />
             <Route path="lesson14" element={<Lesson14 />} />
+            <Route path="lesson15" element={<ErrorPage />} />
             <Route path="lesson14/:id" element={<ProductPage />} />
             <Route path="lesson16" element={<Lesson16 />} />
             <Route path="lesson17" element={<Lesson17 />} />

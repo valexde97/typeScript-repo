@@ -23,6 +23,7 @@ export default function Lessons() {
         <Link to="/lesson12"><div>Lesson 12</div></Link>
         <Link to="/lesson13"><div>Lesson 13</div></Link>
         <Link to="/lesson14"><div>Lesson 14</div></Link>
+        <Link to="/lesson14"><div>Lesson 15</div></Link>
         <Link to="/lesson16"><div>Lesson 16</div></Link>
         <Link to="/lesson17"><div>Lesson 17</div></Link> 
     
